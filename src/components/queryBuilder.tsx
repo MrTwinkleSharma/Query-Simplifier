@@ -53,14 +53,18 @@ const QueryBuilder: FC<Props> = ({ setPopup }) => {
 
   return (
     <div className="bg-[rgba(0,0,0,0.2)] absolute top-0 left-0 h-[100vh] w-[100vw]">
-      <div className='bg-[#1D2025] rounded-[4px] shadow-[0px_4px_16px_rgba(0,0,0,0.1)] h-[80vh] w-[70vw] mx-auto mt-[10vh] mb-[10vh] relative'>
-        <div className='bg-[#5C61F0] py-6 px-8 rounded-t-[4px] relative'>
+      <div className='flex flex-col bg-[#1D2025] rounded-[4px] shadow-[0px_4px_16px_rgba(0,0,0,0.1)] h-[80vh] w-[70vw] mx-auto mt-[10vh] mb-[10vh]'>
+        <div className={`bg-[#5C61F0] py-6 px-8 ${resultString === "" ? "h-[15%]" : 'h-[20%]'}   rounded-t-[4px] relative`}>
           <p className='text-[white] font-[500] text-[16px]'>
             {
               resultString === "" ?
-                <>Create tag and query</>
+                <>
+                  Create tag and query
+                </>
                 :
-                <>Build your query</>
+                <>
+                  Build your query
+                </>
             }
           </p>
           {
@@ -95,7 +99,7 @@ const QueryBuilder: FC<Props> = ({ setPopup }) => {
             <img src={crossImg} alt='' />
           </div>
         </div>
-        <div className='overflow-y-auto h-[35rem] py-8'>
+        <div className={`overflow-y-auto ${resultString === "" ? "h-[75%]" : 'h-[70%]'}  py-8`}>
           <div className='px-6'>
             {
               groups.map((data, i) => (
@@ -109,7 +113,7 @@ const QueryBuilder: FC<Props> = ({ setPopup }) => {
           </div>
         </div>
 
-        <div className='absolute left-0 bottom-[16px] px-6 flex items-center justify-between w-[100%]'>
+        <div className='self-end place-self-end	h-[10%] px-6 flex items-center justify-between w-[100%]'>
           <div onClick={() => setPopup(false)} className='bg-[#6D7175] text-[white] text-[14px] rounded-[6px] px-4 py-2 cursor-pointer'>
             Cancel
           </div>
