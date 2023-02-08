@@ -8,7 +8,7 @@ type Props = {
   setFiltergroup: any
 }
 
-const filter: React.FC<Props> = ({ filterId, filtergroup, setFiltergroup }) => {
+const Filter: React.FC<Props> = ({ filterId, filtergroup, setFiltergroup }) => {
   const [filval, setFilval] = useState(filtergroup[filterId][0]);
   const [conval, setConval] = useState(filtergroup[filterId][1]);
   const [crival, setCrival] = useState(filtergroup[filterId][2]);
@@ -50,4 +50,4 @@ const filter: React.FC<Props> = ({ filterId, filtergroup, setFiltergroup }) => {
   );
 }
 
-export default filter;
+export default Filter;
