@@ -46,6 +46,7 @@ const QueryPopup: FC<Props> = ({ setPopup }) => {
         sessionStorage.setItem('queries', JSON.stringify([resultString]));
         sessionStorage.setItem('queriesObject', JSON.stringify(ruleobj));
       }
+      console.log(ruleobj);
     }
     setPopup(false);
   }
@@ -98,7 +99,7 @@ const QueryPopup: FC<Props> = ({ setPopup }) => {
           <div className='px-6'>
             {
               groups.map((data, i) => (
-                <GroupFilter key={i} groupno={i} groups={groups} setGroups={setGroups} groupsobj={groupsobj} setGroupsobj={setGroupsobj} />
+                <GroupFilter key={i} groupId={i} groups={groups} setGroups={setGroups} groupsobj={groupsobj} setGroupsobj={setGroupsobj} />
               ))
             }
             <div onClick={() => { setGroups(groups => [...groups, ""]) }} className='relative inline-block cursor-pointer bg-[#4F46E5] rounded-[6px] shadow-[0px_1px_2px_rgba(0,0,0,0.05)] px-4 py-[9px] text-white text-[14px]'>

@@ -1,26 +1,26 @@
 import { FC, useEffect, useState } from 'react';
 import arrow from "../assets/downArrow.svg";
-import { fieldData, condition,criteria } from "../data.js";
+import { fieldData, condition, criteria } from "../data.js";
 
 type Props = {
   val: any;
   title: string;
   filval: string;
-  fieldval:string;
+  fieldval: string;
 }
 
 type Ctype = {
-    Theme:string[];
-    "Sub-Theme":string[];
-    Reason:string[];
-    Language:string[];
-    Source:string[];
-    Rating:string[];
-    "Time Period":string[];
-    "Customer ID":string[];
+  Theme: string[];
+  "Sub-Theme": string[];
+  Reason: string[];
+  Language: string[];
+  Source: string[];
+  Rating: string[];
+  "Time Period": string[];
+  "Customer ID": string[];
 }
 
-const FilterTemplate: FC<Props> = ({ val, title, filval,fieldval }) => {
+const FilterTemplate: FC<Props> = ({ val, title, filval, fieldval }) => {
 
   const [filterValue, setFilterValue] = useState(fieldval);
   const [filterClick, setFilterClick] = useState(false);
@@ -29,14 +29,14 @@ const FilterTemplate: FC<Props> = ({ val, title, filval,fieldval }) => {
     val(filterValue);
   }, [filterValue])
 
-  useEffect(()=>{
-    if(title==="criteria")
+  useEffect(() => {
+    if (title === "criteria")
       setFilterValue("");
-  },[filval])
+  }, [filval])
 
-  useEffect(()=>{
+  useEffect(() => {
     setFilterValue(fieldval)
-  },[fieldval])
+  }, [fieldval])
 
   return (
     <div className='w-[28%] text-[white] text-[12px] relative mr-4'>
@@ -78,7 +78,7 @@ const FilterTemplate: FC<Props> = ({ val, title, filval,fieldval }) => {
                   ))
                   :
                   filval !== "" ?
-                    criteria[`${filval}` as keyof Ctype].map((d:string, i:number) => (
+                    criteria[`${filval}` as keyof Ctype].map((d: string, i: number) => (
                       <div key={i} onClick={() => { setFilterValue(d); setFilterClick(!filterClick) }} className='text-[14px] text-[white] font-[400] pl-[7px] hover:bg-[rgba(196,196,196,0.1)] hover:rounded-[4px] cursor-pointer pt-[1px] pb-[2px]'>
                         {d}
                       </div>

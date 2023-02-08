@@ -1,16 +1,16 @@
 import { FC, useEffect, useState } from 'react';
 import infoIcon from '../assets/info.svg'
-import FilterComponent from './FilterComponent';
+import FilterComponent from './filterComponent';
 
 type Props = {
-    groupno: number;
+    groupId: number;
     groups: any;
     setGroups: any;
     groupsobj: any;
     setGroupsobj: any;
 }
 
-const GroupFilter: FC<Props> = ({ groupno, groups, setGroups, groupsobj, setGroupsobj }) => {
+const GroupFilter: FC<Props> = ({ groupId, groups, setGroups, groupsobj, setGroupsobj }) => {
 
     const [condition, setCondition] = useState("AND");
     const [filtergroup, setFiltergroup] = useState([["", "", ""]]);
@@ -62,8 +62,8 @@ const GroupFilter: FC<Props> = ({ groupno, groups, setGroups, groupsobj, setGrou
         const arr = [...groups];
         const arrobj = [...groupsobj];
         if (filtergroup.length === 1) {
-            arr[groupno] = formatFilters(filtergroup[0]);
-            arrobj[groupno] = [formatFiltersobj(filtergroup[0])];
+            arr[groupId] = formatFilters(filtergroup[0]);
+            arrobj[groupId] = [formatFiltersobj(filtergroup[0])];
         }
         else {
             const temp = [];
@@ -73,10 +73,10 @@ const GroupFilter: FC<Props> = ({ groupno, groups, setGroups, groupsobj, setGrou
                 tempobj.push(formatFiltersobj(filtergroup[i]));
             }
             if (condition === "AND") {
-                arr[groupno] = temp.join(' && ');
+                arr[groupId] = temp.join(' && ');
             } else
-                arr[groupno] = temp.join(' || ');
-            arrobj[groupno] = tempobj;
+                arr[groupId] = temp.join(' || ');
+            arrobj[groupId] = tempobj;
         }
         setGroups(arr);
         setGroupsobj(arrobj);
@@ -99,7 +99,7 @@ const GroupFilter: FC<Props> = ({ groupno, groups, setGroups, groupsobj, setGrou
             }
             {
                 filtergroup.map((data, i) => (
-                    <FilterComponent key={i} filterno={i} filtergroup={filtergroup} setFiltergroup={setFiltergroup} />
+                    <FilterComponent key={i} filterId={i} filtergroup={filtergroup} setFiltergroup={setFiltergroup} />
                 ))
             }
             <div onClick={() => { setFiltergroup(filtergroup => [...filtergroup, ["", "", ""]]) }} className='inline-block cursor-pointer bg-[#4F46E5] rounded-[6px] mt-4 shadow-[0px_1px_2px_rgba(0,0,0,0.05)] px-4 py-[9px] text-white text-[14px]'>

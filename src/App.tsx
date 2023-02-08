@@ -2,13 +2,13 @@ import { useEffect, useState } from 'react';
 import QueryPopup from './components/queryPopup';
 import companyLogo from "./assets/companyLogo.svg";
 import chart from "./assets/chart.svg";
-import chart2 from "./assets/chart2.svg";
-import settings from "./assets/Settings.svg";
-import avatar from "./assets/Avatars.svg";
+import chartDark from "./assets/chartDark.svg";
+import settings from "./assets/settings.svg";
+import avatar from "./assets/avatars.svg";
 import filter from "./assets/filter.svg";
 import search from "./assets/search.svg";
 import download from "./assets/download.svg";
-import calendar from "./assets/Calendar.svg";
+import calendar from "./assets/calendar.svg";
 
 function App() {
   const [popup, setPopup] = useState(false);
@@ -32,7 +32,7 @@ function App() {
             </p>
           </div>
           <div className='rounded-[37px] mx-[6px] py-[6px] px-[8px] flex'>
-            <img src={chart2} alt=""/>
+            <img src={chartDark} alt=""/>
             <p className='text-[#8B8C8C] text-[16px] font-[500] ml-2'>
               Nascent Themes
             </p>
@@ -40,7 +40,7 @@ function App() {
           <div className='rounded-[37px] mx-[6px] py-[6px] px-[8px] flex'>
             <img src={settings} alt=""/>
             <p className='text-[#8B8C8C] text-[16px] font-[500] ml-2'>
-              Settings
+              settings
             </p>
           </div>
         </div>
