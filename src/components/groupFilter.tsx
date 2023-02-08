@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from 'react';
 import infoIcon from '../assets/info.svg'
-import FilterComponent from './filterComponent';
+import Filter from './filter';
 
 type Props = {
     groupId: number;
@@ -99,7 +99,7 @@ const GroupFilter: FC<Props> = ({ groupId, groups, setGroups, groupsobj, setGrou
             }
             {
                 filtergroup.map((data, i) => (
-                    <FilterComponent key={i} filterId={i} filtergroup={filtergroup} setFiltergroup={setFiltergroup} />
+                    <Filter key={i} filterId={i} filtergroup={filtergroup} setFiltergroup={setFiltergroup} />
                 ))
             }
             <div onClick={() => { setFiltergroup(filtergroup => [...filtergroup, ["", "", ""]]) }} className='inline-block cursor-pointer bg-[#4F46E5] rounded-[6px] mt-4 shadow-[0px_1px_2px_rgba(0,0,0,0.05)] px-4 py-[9px] text-white text-[14px]'>

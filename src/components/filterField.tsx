@@ -20,7 +20,7 @@ type Ctype = {
   "Customer ID": string[];
 }
 
-const FilterTemplate: FC<Props> = ({ val, title, filval, fieldval }) => {
+const FilterField: FC<Props> = ({ val, title, filval, fieldval }) => {
 
   const [filterValue, setFilterValue] = useState(fieldval);
   const [filterClick, setFilterClick] = useState(false);
@@ -93,4 +93,4 @@ const FilterTemplate: FC<Props> = ({ val, title, filval, fieldval }) => {
   );
 }
 
-export default FilterTemplate;
+export default FilterField;

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import QueryPopup from './components/queryPopup';
+import QueryBuilder from './components/queryBuilder';
 import companyLogo from "./assets/companyLogo.svg";
 import chart from "./assets/chart.svg";
 import chartDark from "./assets/chartDark.svg";
@@ -102,7 +102,7 @@ function App() {
       </div>
       {
         popup ?
-          <QueryPopup setPopup={setPopup} />
+          <QueryBuilder setPopup={setPopup} />
           :
           <></>
       }

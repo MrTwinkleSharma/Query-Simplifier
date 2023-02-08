@@ -6,7 +6,7 @@ type Props = {
   setPopup: any;
 }
 
-const QueryPopup: FC<Props> = ({ setPopup }) => {
+const QueryBuilder: FC<Props> = ({ setPopup }) => {
 
   const [groups, setGroups] = useState([""]);
   const [groupsobj, setGroupsobj] = useState([[{}]]);
@@ -122,4 +122,4 @@ const QueryPopup: FC<Props> = ({ setPopup }) => {
   );
 }
 
-export default QueryPopup;
+export default QueryBuilder;
